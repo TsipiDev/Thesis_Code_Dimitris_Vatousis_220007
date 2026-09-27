@@ -1,0 +1,42 @@
+{
+  "model": "tinyllama",
+  "total_runs": 5,
+  "slow_threshold_spt": 0.8,
+  "fast_threshold_spt": 0.65,
+  "switches": [
+    {
+      "switch_at_run": 2,
+      "from_precision": "fp16",
+      "to_precision": "q8",
+      "trigger_spt": 1.089,
+      "threshold_spt": 0.8,
+      "reason": "throughput_too_slow"
+    },
+    {
+      "switch_at_run": 3,
+      "from_precision": "q8",
+      "to_precision": "fp16",
+      "trigger_spt": 0.5923,
+      "threshold_spt": 0.65,
+      "reason": "throughput_recovered"
+    },
+    {
+      "switch_at_run": 4,
+      "from_precision": "fp16",
+      "to_precision": "q8",
+      "trigger_spt": 1.1144,
+      "threshold_spt": 0.8,
+      "reason": "throughput_too_slow"
+    },
+    {
+      "switch_at_run": 5,
+      "from_precision": "q8",
+      "to_precision": "fp16",
+      "trigger_spt": 0.5968,
+      "threshold_spt": 0.65,
+      "reason": "throughput_recovered"
+    }
+  ],
+  "total_switches": 4,
+  "final_precision": "fp16"
+}

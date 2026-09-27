@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+fp16,qwen2,45.8736,8.458,378.644,4.096,99.014,37.52,92.4,45.4

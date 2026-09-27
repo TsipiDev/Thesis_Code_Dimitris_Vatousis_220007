@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+int8,qwen2,27.5014,8.4618,222.3586,2.2236,98.792,25.862,100,27

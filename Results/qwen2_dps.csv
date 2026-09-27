@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples,dps_precision,s_per_token
+dps,qwen2,45.89,8.4704,378.8176,4.1037,99.144,37.512,92.4,45.4,fp16,0.4973

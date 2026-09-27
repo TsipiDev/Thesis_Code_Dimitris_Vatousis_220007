@@ -1,0 +1,45 @@
+results_dir: "Results"
+gguf_dir: "models/gguf"
+runs_per_method: 5
+max_new_tokens: 100
+
+models:
+  - name: "tinyllama"
+    methods: ["fp16", "int8", "pruned", "dps"]
+    prompts:
+      - "Explain energy efficiency in simple terms."
+      - "What is quantization in machine learning?"
+      - "Describe the trade-off between model size and accuracy."
+      - "How does pruning affect neural network performance?"
+      - "What are the benefits of running AI on edge devices?"
+
+  - name: "llama3.2"
+    methods: ["fp16", "int8", "pruned", "dps"]
+    prompts:
+      - "Explain energy efficiency in simple terms."
+      - "What is quantization in machine learning?"
+      - "Describe the trade-off between model size and accuracy."
+      - "How does pruning affect neural network performance?"
+      - "What are the benefits of running AI on edge devices?"
+
+  - name: "qwen2"
+    methods: ["fp16", "int8", "pruned", "dps"]
+    prompts:
+      - "Explain energy efficiency in simple terms."
+      - "What is quantization in machine learning?"
+      - "Describe the trade-off between model size and accuracy."
+      - "How does pruning affect neural network performance?"
+      - "What are the benefits of running AI on edge devices?"
+
+methods:
+  - name: "fp16"
+    type: "fp16"
+
+  - name: "int8"
+    type: "int8"
+
+  - name: "pruned"
+    type: "pruned"
+
+  - name: "dps"
+    type: "dps"

@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+fp16,llama3.2,121.9818,8.2278,994.6688,9.9467,99.718,77.18,100,120.8

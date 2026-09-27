@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples,dps_precision,s_per_token
+dps,llama3.2,76.6796,8.4524,639.1054,6.3911,99.476,94.666,100,76,fp16,0.7668

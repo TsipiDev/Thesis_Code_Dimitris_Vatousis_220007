@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "total_runs": 5,
+  "slow_threshold_spt": 0.8,
+  "fast_threshold_spt": 0.65,
+  "switches": [
+    {
+      "switch_at_run": 2,
+      "from_precision": "fp16",
+      "to_precision": "q8",
+      "trigger_spt": 1.206,
+      "threshold_spt": 0.8,
+      "reason": "throughput_too_slow"
+    }
+  ],
+  "total_switches": 1,
+  "final_precision": "q8"
+}

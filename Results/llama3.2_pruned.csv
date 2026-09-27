@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+pruned,llama3.2,122.4348,8.246,1001.1378,10.0114,99.704,77.212,100,121.4

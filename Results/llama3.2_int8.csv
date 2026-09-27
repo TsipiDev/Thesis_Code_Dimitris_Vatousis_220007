@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+int8,llama3.2,65.8836,8.2364,534.1714,5.3417,99.484,47.95,100,65.2

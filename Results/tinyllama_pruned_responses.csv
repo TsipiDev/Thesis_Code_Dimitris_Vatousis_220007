@@ -1,0 +1,21 @@
+"1. Energy efficiency refers to the process of reducing energy consumption and waste in an energy-intensive system. In simple terms, energy efficiency measures how much energy is used and produced compared to the amount of energy consumed.
+
+Energy efficiency can be achieved through various measures, including:
+
+1. Reducing energy consumption: One of the most common measures of energy efficiency is reducing energy consumption. This can be achieved through various measures such as:
+
+- Reducing"
+"2. Quantization is a technique used in machine learning to represent data in a more compact and manageable format. In machine learning, quantization refers to the process of converting numerical data into a set of binary digits or integers. Quantization is commonly used in data compression, whereby data is compressed into a smaller size while maintaining the same information content. Quantization is also used in data analysis, whereby data is transformed into a set of quantized values that can be easily processed and analyzed"
+"3. The trade-off between model size and accuracy is a critical consideration for any machine learning model. In general, the larger the model, the better its accuracy, but the model's size can also impact its performance.
+
+When it comes to model size, the trade-off is often expressed in terms of the number of parameters or weights in the model. Larger models tend to have more parameters or weights, which can increase the model's complexity and computational cost. However, larger models"
+"4. Pruning is a technique used in neural network optimization to reduce the number of nodes or branches in a tree-structured network. This can improve the performance of the network by reducing the number of connections between nodes or branches.
+
+Here are some ways in which pruning affects neural network performance:
+
+1. Reducing overfitting: Pruning helps to reduce the number of connections between nodes or branches, which can help to prevent overfitting, i.e.,"
+"5. Running AI on edge devices offers several benefits:
+
+1. Faster processing: Edge devices are typically smaller and more power-efficient than central servers, which means they can handle more processing power and data processing. This can lead to faster processing times for AI models.
+
+2. Lower power consumption: Edge devices are typically power-efficient, which means they can handle lower power consumption than central servers. This can lead to lower power consumption and lower energy costs for AI models."

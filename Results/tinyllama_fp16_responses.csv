@@ -1,0 +1,17 @@
+"1. Energy efficiency refers to the process of using energy in a way that is more efficient and sustainable. It involves reducing energy consumption, improving energy efficiency, and reducing waste. Energy efficiency can be achieved through various measures, such as:
+
+1. Reducing energy consumption: This involves reducing the amount of energy used by a building, appliance, or device. This can be achieved through measures such as turning off lights and appliances when not in use, using energy"
+"2. Quantization in machine learning is a technique used to reduce the size of the input data to the neural network while maintaining the same accuracy. The process involves converting the input data into a smaller range of values, typically between 0 and 1, to reduce the computational complexity of the neural network. This process is done by using a quantization algorithm that maps the input data to a fixed range of values. The resulting output data is then used to train the neural network.
+
+Quantization is"
+"3. The trade-off between model size and accuracy is a complex and multifaceted issue that depends on various factors such as the type of model, the data used, the complexity of the problem, and the specific requirements of the application. Here are some common trade-offs:
+
+1. Model size: The larger the model, the more computationally expensive it becomes to train and evaluate. However, larger models can be more accurate in certain situations, such as when the data is highly"
+"4. Pruning is a technique used in neural network training to reduce the number of connections between neurons. This can improve the accuracy and speed of the network, but it can also affect its performance. Here are some ways pruning affects neural network performance:
+
+1. Reduced complexity: Pruning reduces the number of connections between neurons, which can lead to a reduction in the number of parameters in the network. This can improve the network's ability to learn and generalize"
+"5. There are several benefits of running AI on edge devices:
+
+1. Faster processing: Edge devices have lower power consumption and can process data faster than centralized servers. This means that AI algorithms can be trained and deployed more quickly, improving the speed and accuracy of the system.
+
+2. Lower latency: Edge devices are closer to the data sources, which means they can process data more quickly and accurately. This can improve the overall user experience and reduce latency"

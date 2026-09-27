@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples
+int8,tinyllama,59.788,8.199,481.144,4.8114,99.734,43.186,100,59.2

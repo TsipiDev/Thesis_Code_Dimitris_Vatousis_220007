@@ -1,0 +1,2 @@
+Method,Model,Inference Time (s),Avg Power (W),Total Energy (J),Joule / Token,Avg CPU (%),Avg RAM (%),Tokens,Power Samples,dps_precision,s_per_token
+dps,tinyllama,90.1142,8.2172,731.5904,7.3159,99.778,92.238,100,89.2,fp16,0.9011
