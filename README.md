@@ -38,7 +38,7 @@ Models evaluated: **TinyLlama 1.1B Chat**, **Llama 3.2 1B** and **Qwen2 0.5B**.
 
 ## Key Findings
 
-Mean of 5 runs per model/method combination, 100 generated tokens per run (60 runs in total).
+Mean of 5 runs per model/method combination, up to 100 generated tokens per run (60 runs in total).
 
 | Model | Method | Time (s) | Power (W) | Energy (J) | J/token | RAM % |
 |---|---|---:|---:|---:|---:|---:|
@@ -56,9 +56,9 @@ Mean of 5 runs per model/method combination, 100 generated tokens per run (60 ru
 | Qwen2 | dps | 45.9 | 8.470 | 378.8 | 4.104 | 37.5 |
 
 1. **Power is practically constant (about 8.2 W)** regardless of method. On the Pi 400, energy is therefore determined almost entirely by inference time.
-2. **INT8 (Q8_0) quantization** reduces energy per token by about 41% to 46% on every model and also cuts RAM usage substantially, with no noticeable loss in response quality.
+2. **INT8 (Q8_0) quantization** reduces energy per token by about 45% to 46% on every model and also cuts RAM usage substantially, with no noticeable loss in response quality.
 3. **Unstructured pruning** yields no energy benefit on CPU inference with llama.cpp: zeroed weights still occupy dense matrices, so the same number of FLOPs is executed. It also degraded Llama 3.2 output quality (repetitive text).
-4. **DPS** behaves adaptively: 4 switches for TinyLlama (oscillating near the fast threshold), 1 switch for Llama 3.2 (stays on Q8_0) and 0 switches for Qwen2 (stays on fp16, since it is already fast enough).
+4. **DPS** behaves adaptively: 4 switches for TinyLlama (it switches on every run, because fp16 is always above the slow threshold and Q8_0 always below the fast one), 1 switch for Llama 3.2 (stays on Q8_0) and 0 switches for Qwen2 (stays on fp16, since it is already fast enough).
 5. **Model size matters more than the optimisation method**: Qwen2 fp16 (4.096 J/token) beats both TinyLlama int8 and Llama 3.2 int8. The best combination is a small model plus INT8.
 
 ---
@@ -532,11 +532,11 @@ Example console output (TinyLlama / DPS):
 [DPS] Thresholds: slow=0.8s/token fast=0.65s/token
 [DPS] Run 1: first run -- starting on fp16 (full precision)
 [MODEL] Loading models/gguf/tinyllama_fp16.gguf...
-[RUN 1/5] 100 tokens | 110.3s | 8.08W | 8.834 J/token | 1.103s/tok [fp16]
-[DPS] Run 2: 1.103s/token > 0.8s/token -- too slow, switching fp16 -> Q8_0
+[RUN 1/5] 100 tokens | 108.9s | 8.21W | 8.862 J/token | 1.089s/tok [fp16]
+[DPS] Run 2: 1.089s/token > 0.8s/token -- too slow, switching fp16 -> Q8_0
 [MODEL] Loading models/gguf/tinyllama_q8.gguf...
-[RUN 2/5] 100 tokens | 58.9s | 8.20W | 4.821 J/token | 0.589s/tok [q8]
-[DPS] Run 3: 0.589s/token < 0.65s/token -- fast enough, switching Q8_0 -> fp16
+[RUN 2/5] 100 tokens | 59.2s | 8.22W | 4.784 J/token | 0.592s/tok [q8]
+[DPS] Run 3: 0.592s/token < 0.65s/token -- fast enough, switching Q8_0 -> fp16
 ...
 [DPS] 4 switch(es) recorded.
 ```
@@ -569,7 +569,7 @@ Relative change of J/token versus the fp16 baseline:
 |---|---:|---:|---:|---|
 | TinyLlama | −45.5% | +3.1% | −17.1% | int8 |
 | Llama3.2 | −46.3% | +0.7% | −35.7% | int8 |
-| Qwen2 | −41.3% | −1.0% | 0.0% | int8 |
+| Qwen2 | −45.7% | −1.0% | +0.2% | int8 |
 
 ![Method comparison across models](Results/comparison_all_models.png)
 
@@ -580,7 +580,7 @@ Relative change of J/token versus the fp16 baseline:
 * **Single hardware platform**: all results come from one Raspberry Pi 400; DPS thresholds must be recalibrated for other hardware.
 * **Few, small models**: three models in the 0.5B to 1.1B range.
 * **Pruning without retraining**: unstructured 30% L1 pruning, which is not the best possible pruning implementation; structured pruning or sparse aware kernels would be needed for real gains.
-* **Fixed workload**: 100 new tokens per run; real applications have variable response lengths.
+* **Fixed workload**: up to 100 new tokens per run (`max_new_tokens`); a few Qwen2 runs stopped earlier (fp16 and dps average 92.4 tokens); real applications have variable response lengths.
 * **Passive cooling**: the Pi 400 has no active cooling, so thermal throttling may slowly increase inference time over long sessions. Thermally aware DPS (using `/sys/class/thermal` as an extra switching signal) is proposed as future work.
 
 ---
